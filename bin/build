@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+IFS=$'\n\t'
+
+VERSION="$(cat .version)"
+CONTAINER_NAME="contadock"
+
+docker build \
+  -t "${CONTAINER_NAME}:latest" \
+  -t "${CONTAINER_NAME}:${VERSION}" \
+  . |& tee -- docker-build.log
+

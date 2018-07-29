@@ -1,0 +1,25 @@
+version: '3.1'
+services:
+  mysql:
+    image: "mysql:5.7"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - "./.docker/mysql:/var/lib/mysql"
+    ports:
+      - "3306:3306"
+  contao:
+    image: "contadock:latest"
+    volumes:
+      - "./app/templates:/var/www/html/templates:rw"
+      - "./app/files:/var/www/html/files:rw"
+      - "./app/app/config:/var/www/html/app/config:rw"
+      - "./app/system/config:/var/www/html/system/config:rw"
+    ports:
+      - "3000:80"
+    links:
+      - mysql
+    command: >
+      sh -c "usermod -u 1000 www-data &&
+             groupmod -g 1000 www-data &&
+             apache2-foreground"
