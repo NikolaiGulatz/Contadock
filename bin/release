@@ -10,7 +10,7 @@ IMAGE_NAME="nikolaigulatz/contadock"
 git tag "$VERSION"
 git push origin "$VERSION"
 
-docker tag "${CONTAINER_NAME}:latest" "${REGISTRY_PATH}":latest
-docker tag "${CONTAINER_NAME}:${VERSION}" "${REGISTRY_PATH}:${VERSION}"
-docker push "${REGISTRY_PATH}:${VERSION}"
-docker push "${REGISTRY_PATH}:latest"
+docker tag "${CONTAINER_NAME}:latest" "${IMAGE_NAME}":latest
+docker tag "${CONTAINER_NAME}:${VERSION}" "${IMAGE_NAME}:${VERSION}"
+docker push "${IMAGE_NAME}:${VERSION}"
+docker push "${IMAGE_NAME}:latest"
