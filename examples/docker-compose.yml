@@ -9,7 +9,7 @@ services:
     ports:
       - "3306:3306"
   contao:
-    image: "contadock:latest"
+    image: "nikolaigulatz/contadock:latest"
     volumes:
       - "./app/templates:/var/www/html/templates:rw"
       - "./app/files:/var/www/html/files:rw"

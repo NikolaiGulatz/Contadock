@@ -2,7 +2,11 @@
 
 A Docker container for a modern Contao `4.5.* (LTS)` development workflow.
 
-## Example usage
+## Usage
+
+`$ docker pull nikolaigulatz/contadock`
+
+## Example Usage
 
 1. Create a directory where your MySQL volume data will be stored:
    * `$ mkdir -p .docker/mysql && echo '.docker' >> .gitignore`
