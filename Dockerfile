@@ -23,6 +23,7 @@ RUN apt-get update && \
     docker-php-ext-enable \
       imagick && \
     rm -rf /tmp/* /var/cache/apk/* && \
+    chmod -R 777 /tmp && \
     a2enmod rewrite && \
     curl -sS https://getcomposer.org/installer | php && \
     mv composer.phar /usr/local/bin/composer

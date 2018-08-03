@@ -16,7 +16,7 @@ services:
       - "./app/app/config:/var/www/html/app/config:rw"
       - "./app/system/config:/var/www/html/system/config:rw"
     ports:
-      - "3000:80"
+      - "127.0.0.1:3000:80"
     links:
       - mysql
     command: >
