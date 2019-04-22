@@ -9,5 +9,4 @@ CONTAINER_NAME="contadock"
 docker build \
   -t "${CONTAINER_NAME}:latest" \
   -t "${CONTAINER_NAME}:${VERSION}" \
-  . |& tee -- docker-build.log
-
+  . | tee -- docker-build.log
